@@ -190,11 +190,6 @@ section { padding: 64px 0; }
 }
 .filter-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
 
-/* Stats */
-.stats { background: var(--ink); color: #fff; }
-.stats .grid { text-align: center; }
-.stats strong { display: block; font-size: 2.2rem; color: #f0b27a; }
-
 /* CTA */
 .cta { background: var(--brand); color: #fff; text-align: center; }
 .cta h2 { font-size: 1.9rem; margin-bottom: 8px; }
