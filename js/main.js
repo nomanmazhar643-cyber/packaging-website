@@ -53,18 +53,37 @@ if (banner) {
   restart();
 }
 
-// Product category filter
+// Product category filter + text search (they combine)
 const filterBtns = document.querySelectorAll(".filter-btn");
+const searchInput = document.getElementById("product-search");
+const resultCount = document.getElementById("result-count");
+const noResults = document.getElementById("no-results");
+let activeCat = "all";
+
+function applyProductFilters() {
+  const q = searchInput ? searchInput.value.trim().toLowerCase() : "";
+  let shown = 0;
+  document.querySelectorAll("[data-category]").forEach((card) => {
+    const matchCat = activeCat === "all" || card.dataset.category === activeCat;
+    const matchText = !q || card.textContent.toLowerCase().includes(q);
+    const show = matchCat && matchText;
+    card.style.display = show ? "" : "none";
+    if (show) shown++;
+  });
+  if (resultCount) resultCount.textContent = `Showing ${shown} product${shown === 1 ? "" : "s"}`;
+  if (noResults) noResults.hidden = shown > 0;
+}
+
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     filterBtns.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
-    const cat = btn.dataset.filter;
-    document.querySelectorAll("[data-category]").forEach((card) => {
-      card.style.display = cat === "all" || card.dataset.category === cat ? "" : "none";
-    });
+    activeCat = btn.dataset.filter;
+    applyProductFilters();
   });
 });
+if (searchInput) searchInput.addEventListener("input", applyProductFilters);
+if (filterBtns.length) applyProductFilters();
 
 // Apply category filter from ?cat=... (homepage category tiles link here)
 const presetCat = new URLSearchParams(location.search).get("cat");
@@ -149,7 +168,7 @@ document.querySelectorAll("form[data-whatsapp]").forEach((form) => {
       if (value && String(value).trim()) lines.push(`*${label}:* ${String(value).trim()}`);
     });
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
-    window.open(url, "_blank", "noopener");
+    window.open(url, "_blank", "noopener,noreferrer");
     const msg = form.querySelector(".form-msg");
     if (msg) msg.classList.add("show");
   });
