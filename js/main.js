@@ -69,12 +69,30 @@ const productSelect = document.getElementById("product");
 const preset = new URLSearchParams(location.search).get("product");
 if (productSelect && preset) productSelect.value = preset;
 
-// Forms (front-end only; wire to a backend or form service to receive submissions)
-document.querySelectorAll("form[data-demo]").forEach((form) => {
+// Quote form: GitHub Pages has no backend, so the request is sent as a pre-filled WhatsApp message
+const WHATSAPP_NUMBER = "923017090822";
+document.querySelectorAll("form[data-whatsapp]").forEach((form) => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    const data = new FormData(form);
+    const select = form.querySelector("#product");
+    const fields = [
+      ["Name", data.get("name")],
+      ["Company", data.get("company")],
+      ["Email", data.get("email")],
+      ["Phone", data.get("phone")],
+      ["Product", select && select.value ? select.options[select.selectedIndex].text : ""],
+      ["Quantity", data.get("quantity")],
+      ["Dimensions", data.get("dimensions")],
+      ["Details", data.get("message")],
+    ];
+    const lines = ["*New quote request (website)*"];
+    fields.forEach(([label, value]) => {
+      if (value && String(value).trim()) lines.push(`*${label}:* ${String(value).trim()}`);
+    });
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(url, "_blank", "noopener");
     const msg = form.querySelector(".form-msg");
     if (msg) msg.classList.add("show");
-    form.reset();
   });
 });
