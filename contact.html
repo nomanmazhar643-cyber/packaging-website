@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Quote | PackCraft</title>
+  <meta name="description" content="Request a free packaging quote or get in touch with PackCraft.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <a href="tel:+15550100123">&#128222; +1 (555) 010-0123</a>
+      <a href="mailto:info@packcraft.example">&#9993;&#65039; info@packcraft.example</a>
+      <span class="topbar-address">&#128205; 123 Industrial Ave, Suite 4, Springfield, USA</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Pack<span>Craft</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Request a Quote</h1>
+        <p>Fill in the details below and we'll reply within 24 hours.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container form-wrap">
+        <form class="card" data-demo>
+          <div class="form-msg">Thanks! Your request has been received. We'll be in touch soon.</div>
+          <div class="row">
+            <div><label for="name">Full name</label><input id="name" name="name" required></div>
+            <div><label for="company">Company</label><input id="company" name="company"></div>
+          </div>
+          <div class="row">
+            <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="product">Product</label>
+              <select id="product" name="product" required>
+                <option value="">Select a product</option>
+                <optgroup label="Boxes">
+                  <option value="black-rigid-box">Black Rigid Box</option>
+                  <option value="birthday-surprise-box">Birthday Surprise Box</option>
+                  <option value="black-food-boxes">Black Food Boxes</option>
+                  <option value="blank-pizza-boxes">Blank Pizza Boxes</option>
+                  <option value="blue-food-packaging">Blue Food Packaging</option>
+                </optgroup>
+                <optgroup label="Paper Cups">
+                  <option value="brown-paper-cups">Brown Paper Cups</option>
+                  <option value="butterfly-paper-cups">Butterfly Paper Cups</option>
+                  <option value="bowl-paper-cups">Bowl Paper Cups</option>
+                  <option value="cardboard-coffee-cups">Cardboard Coffee Cups</option>
+                  <option value="cardboard-cups-with-lids">Cardboard Cups with Lids</option>
+                  <option value="christmas-coffee-cups">Christmas Coffee Cups</option>
+                  <option value="christmas-paper-cups">Christmas Paper Cups</option>
+                </optgroup>
+                <optgroup label="Sleeves">
+                  <option value="black-coffee-sleeves">Black Coffee Sleeves</option>
+                  <option value="blank-coffee-sleeves">Blank Coffee Sleeves</option>
+                  <option value="branded-coffee-sleeves">Branded Coffee Sleeves</option>
+                  <option value="branded-cup-sleeves">Branded Cup Sleeves</option>
+                  <option value="cardboard-coffee-sleeves">Cardboard Coffee Sleeves</option>
+                  <option value="black-burger-sleeves">Black Printed Burger Sleeves</option>
+                  <option value="cardboard-burger-sleeves">Cardboard Burger Sleeves</option>
+                  <option value="chocolate-bar-sleeve">Chocolate Bar Sleeve</option>
+                </optgroup>
+                <optgroup label="Paper &amp; Folders">
+                  <option value="cheese-paper">Cheese Paper</option>
+                  <option value="presentation-folders">Blank Presentation Folders</option>
+                </optgroup>
+                <option value="other">Other / Not sure</option>
+              </select>
+            </div>
+            <div><label for="qty">Quantity</label><input id="qty" name="quantity" type="number" min="100" step="50" placeholder="e.g. 500"></div>
+          </div>
+          <label for="dims">Dimensions (L × W × H)</label>
+          <input id="dims" name="dimensions" placeholder="e.g. 10 × 8 × 4 in">
+          <label for="msg">Project details</label>
+          <textarea id="msg" name="message" rows="5" placeholder="Materials, printing, deadline, anything else..."></textarea>
+          <button type="submit" class="btn">Send Request</button>
+        </form>
+
+        <aside>
+          <div class="card" style="margin-bottom:24px">
+            <h3>Contact info</h3>
+            <p>📍 123 Industrial Ave, Suite 4<br>Springfield, USA</p>
+            <p style="margin-top:12px">📞 <a href="tel:+15550100123">+1 (555) 010-0123</a></p>
+            <p>✉️ <a href="mailto:info@packcraft.example">info@packcraft.example</a></p>
+          </div>
+          <div class="card">
+            <h3>Business hours</h3>
+            <p>Mon–Fri: 8:00 – 18:00<br>Sat: 9:00 – 13:00<br>Sun: Closed</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid">
+        <div><h4>PackCraft</h4><p>Custom packaging for brands of every size.</p></div>
+        <div><h4>Pages</h4><ul><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="tel:+15550100123">+1 (555) 010-0123</a></li><li><a href="mailto:info@packcraft.example">info@packcraft.example</a></li><li>123 Industrial Ave, Suite 4<br>Springfield, USA</li></ul></div>
+      </div>
+      <p class="copy">&copy; <span id="year"></span> PackCraft. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
