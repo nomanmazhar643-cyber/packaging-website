@@ -391,6 +391,25 @@ a.contact-card:hover { color: var(--ink); transform: translateY(-3px); box-shado
 .order-done-icon { color: #fff; background: #25d366; }
 .cart-empty p, .order-done p { color: var(--muted); margin: 8px auto 24px; max-width: 520px; }
 
+/* Why-choose-us grid: 3 x 2 on desktop */
+.features-grid { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .features-grid { grid-template-columns: 1fr; } }
+
+/* Testimonials (hidden in HTML until real reviews are added) */
+.testimonial-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.testimonial { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.testimonial .stars { color: #e0a43a; letter-spacing: 2px; font-size: 1.05rem; }
+.testimonial blockquote { color: var(--ink); font-size: 1.02rem; line-height: 1.65; flex: 1; }
+.testimonial blockquote::before { content: "\201C"; }
+.testimonial blockquote::after { content: "\201D"; }
+.testimonial figcaption { display: flex; gap: 12px; align-items: center; }
+.testimonial .avatar {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--brand), #d98c4a); color: #fff; font-weight: 700;
+}
+.testimonial small { display: block; color: var(--muted); }
+
 /* FAQ (home page) */
 .faq { background: #f3e9dc; }
 .faq-layout { display: grid; gap: 40px; grid-template-columns: 1fr 1.6fr; align-items: start; }

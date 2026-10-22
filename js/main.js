@@ -269,7 +269,7 @@ if (cartList) {
 
       const img = document.createElement("img");
       img.src = typeof it.image === "string" && it.image.startsWith("images/") ? it.image : "favicon.svg";
-      img.alt = "";
+      img.alt = it.name;
 
       const info = document.createElement("div");
       const h3 = document.createElement("h3");
