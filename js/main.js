@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 // Mobile nav toggle
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
@@ -63,6 +65,29 @@ filterBtns.forEach((btn) => {
     });
   });
 });
+
+// Apply category filter from ?cat=... (homepage category tiles link here)
+const presetCat = new URLSearchParams(location.search).get("cat");
+if (presetCat) {
+  const catBtn = document.querySelector(`.filter-btn[data-filter="${presetCat}"]`);
+  if (catBtn) catBtn.click();
+}
+
+// Fade sections in as they scroll into view
+const reveals = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach((el) => io.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add("visible"));
+}
 
 // Pre-select product on the quote form from ?product=...
 const productSelect = document.getElementById("product");
