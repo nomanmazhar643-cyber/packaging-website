@@ -403,7 +403,9 @@ a.contact-card:hover { color: var(--ink); transform: translateY(-3px); box-shado
 }
 .faq-help h3 { margin-bottom: 6px; }
 .faq-help p { color: var(--muted); margin-bottom: 16px; }
-.faq-help .btn { display: inline-flex; align-items: center; gap: 8px; }
+.faq-help .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.faq-help-actions { display: grid; gap: 10px; }
+@media (max-width: 900px) { .faq-help-actions { max-width: 340px; margin: 0 auto; } }
 .faq-list { display: grid; gap: 12px; }
 .faq-item {
   background: #fff; border: 1px solid var(--line); border-radius: 14px;
