@@ -36,19 +36,31 @@ a:hover { color: var(--brand-dark); }
   fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 
-/* Top contact bar */
-.topbar { background: var(--ink); color: #cfc6bb; font-size: .85rem; }
-.topbar .container {
-  display: flex; gap: 24px; align-items: center; justify-content: space-between;
-  min-height: 38px; flex-wrap: wrap;
+/* Contact info bar above the header: "Let's Have A Talk / Email Us Now / Working Hours" */
+.info-bar { background: var(--ink); color: #fff; }
+.info-bar .container {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: 72px; padding-top: 10px; padding-bottom: 10px;
 }
-.topbar-links { display: flex; gap: 22px; flex-wrap: wrap; }
-.topbar a, .topbar span { color: #cfc6bb; display: inline-flex; align-items: center; gap: 7px; }
-.topbar a:hover { color: #fff; }
-.topbar .i { color: #f0b27a; }
+.info-tagline { color: #b9afa4; font-size: .9rem; line-height: 1.4; }
+.info-tagline strong { color: #fff; font-family: "Poppins", system-ui, sans-serif; }
+.info-items { display: flex; gap: 34px; }
+.info-item { display: flex; align-items: center; gap: 12px; color: #fff; }
+a.info-item:hover { color: #f0b27a; }
+.info-icon {
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  font-size: 1.15rem; color: #fff; background: linear-gradient(135deg, var(--brand), #d98c4a);
+  box-shadow: 0 4px 12px rgba(181,101,29,.35);
+}
+.info-item small { display: block; color: #b9afa4; font-size: .78rem; letter-spacing: .02em; }
+.info-item strong { display: block; font-family: "Poppins", system-ui, sans-serif; font-size: .95rem; font-weight: 600; }
+@media (max-width: 1000px) { .info-tagline { display: none; } .info-items { width: 100%; justify-content: space-between; gap: 16px; } }
 @media (max-width: 720px) {
-  .topbar .container { justify-content: center; padding-top: 6px; padding-bottom: 6px; }
-  .topbar-tagline, .topbar-address { display: none !important; }
+  .info-bar .container { min-height: 0; }
+  .info-items { gap: 10px; }
+  .info-item.info-email { display: none; }
+  .info-icon { width: 34px; height: 34px; font-size: .95rem; }
+  .info-item strong { font-size: .85rem; }
 }
 
 /* Header */
