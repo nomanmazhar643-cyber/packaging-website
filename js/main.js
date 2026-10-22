@@ -73,8 +73,17 @@ if (presetCat) {
   if (catBtn) catBtn.click();
 }
 
-// Fade sections in as they scroll into view
-const reveals = document.querySelectorAll(".reveal");
+// Fade sections in as they scroll into view; siblings in a grid come in one after another
+const reveals = document.querySelectorAll(".reveal, .reveal-line");
+reveals.forEach((el) => {
+  const siblings = [...el.parentElement.children].filter((c) => c.classList.contains("reveal"));
+  const i = siblings.indexOf(el);
+  if (siblings.length > 1 && i > 0) {
+    el.style.transitionDelay = `${(i % 6) * 90}ms`;
+    // drop the delay afterwards so hover effects stay snappy
+    el.addEventListener("transitionend", () => { el.style.transitionDelay = ""; }, { once: true });
+  }
+});
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -88,6 +97,30 @@ if ("IntersectionObserver" in window) {
 } else {
   reveals.forEach((el) => el.classList.add("visible"));
 }
+
+// Header shadow once the page is scrolled
+const header = document.querySelector(".site-header");
+if (header) {
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 10);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+// Rotate the highlighted word in the banner heading
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll(".rotator[data-words]").forEach((el) => {
+  const words = el.dataset.words.split("|");
+  if (reduceMotion || words.length < 2) return;
+  let w = 0;
+  setInterval(() => {
+    el.classList.add("out");
+    setTimeout(() => {
+      w = (w + 1) % words.length;
+      el.textContent = words[w];
+      el.classList.remove("out");
+    }, 350);
+  }, 2600);
+});
 
 // Pre-select product on the quote form from ?product=...
 const productSelect = document.getElementById("product");
