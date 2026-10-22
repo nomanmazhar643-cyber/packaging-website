@@ -391,6 +391,43 @@ a.contact-card:hover { color: var(--ink); transform: translateY(-3px); box-shado
 .order-done-icon { color: #fff; background: #25d366; }
 .cart-empty p, .order-done p { color: var(--muted); margin: 8px auto 24px; max-width: 520px; }
 
+/* FAQ (home page) */
+.faq { background: #f3e9dc; }
+.faq-layout { display: grid; gap: 40px; grid-template-columns: 1fr 1.6fr; align-items: start; }
+@media (max-width: 900px) { .faq-layout { grid-template-columns: 1fr; } }
+.faq-intro { position: sticky; top: 100px; }
+@media (max-width: 900px) { .faq-intro { position: static; text-align: center; } }
+.faq-help {
+  margin-top: 28px; background: #fff; border-radius: 16px; padding: 24px;
+  box-shadow: 0 8px 24px rgba(31,26,22,.06);
+}
+.faq-help h3 { margin-bottom: 6px; }
+.faq-help p { color: var(--muted); margin-bottom: 16px; }
+.faq-help .btn { display: inline-flex; align-items: center; gap: 8px; }
+.faq-list { display: grid; gap: 12px; }
+.faq-item {
+  background: #fff; border: 1px solid var(--line); border-radius: 14px;
+  transition: box-shadow .25s, border-color .25s;
+}
+.faq-item[open] { border-color: rgba(181,101,29,.45); box-shadow: 0 10px 26px rgba(31,26,22,.08); }
+.faq-item summary {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 18px 56px 18px 22px; font-family: "Poppins", system-ui, sans-serif; font-weight: 600; font-size: 1.02rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: #fbe9d4; color: var(--brand); font-size: 1.2rem; font-weight: 600; line-height: 1;
+  transition: transform .25s, background .25s, color .25s;
+}
+.faq-item[open] summary::after { content: "\2212"; background: var(--brand); color: #fff; transform: translateY(-50%) rotate(180deg); }
+.faq-item summary:hover { color: var(--brand); }
+.faq-item summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 14px; }
+.faq-answer { padding: 0 22px 20px; color: var(--muted); }
+.faq-item[open] .faq-answer { animation: faq-in .3s ease; }
+@keyframes faq-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
 /* 404 page */
 .not-found { text-align: center; padding: 120px 0; }
 .not-found .code { font-family: "Poppins", system-ui, sans-serif; font-size: clamp(5rem, 18vw, 9rem); font-weight: 800; line-height: 1; color: var(--brand); }
