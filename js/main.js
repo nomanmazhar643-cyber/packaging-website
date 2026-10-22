@@ -173,3 +173,186 @@ document.querySelectorAll("form[data-whatsapp]").forEach((form) => {
     if (msg) msg.classList.add("show");
   });
 });
+
+// ---------- Cart (stored in this browser only; orders are sent on WhatsApp) ----------
+const CART_KEY = "packcraft-cart";
+
+function readCart() {
+  try {
+    const items = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+    // only keep well-formed entries, in case storage was edited by hand
+    return Array.isArray(items)
+      ? items.filter((it) => it && typeof it.slug === "string" && typeof it.name === "string" && Number.isInteger(it.qty) && it.qty > 0)
+      : [];
+  } catch (err) {
+    return [];
+  }
+}
+
+function writeCart(items) {
+  try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch (err) { /* storage unavailable */ }
+  updateCartCount();
+}
+
+function updateCartCount(bump) {
+  const count = readCart().length;
+  document.querySelectorAll(".cart-count").forEach((el) => {
+    el.textContent = count;
+    el.hidden = count === 0;
+    if (bump) { el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump"); }
+  });
+}
+
+function parseQty(input) {
+  const n = Number(input.value);
+  return Number.isInteger(n) && n > 0 && n <= 1000000 ? n : 0;
+}
+
+let toastTimer;
+function showToast(text) {
+  let toast = document.querySelector(".toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    const span = document.createElement("span");
+    const link = document.createElement("a");
+    link.href = "cart.html";
+    link.textContent = "View cart →";
+    toast.append(span, link);
+    document.body.appendChild(toast);
+  }
+  toast.querySelector("span").textContent = text;
+  requestAnimationFrame(() => toast.classList.add("show"));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+}
+
+// "Add to Cart" buttons on product cards
+document.querySelectorAll(".add-to-cart").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".product-card");
+    const input = card.querySelector(".qty-input");
+    const qty = parseQty(input);
+    if (!qty) {
+      input.classList.remove("invalid"); void input.offsetWidth; input.classList.add("invalid");
+      input.focus();
+      return;
+    }
+    input.classList.remove("invalid");
+    const slug = btn.dataset.slug;
+    const name = card.querySelector("h3").textContent.trim();
+    const image = card.querySelector(".thumb img").getAttribute("src");
+    const items = readCart();
+    const existing = items.find((it) => it.slug === slug);
+    if (existing) existing.qty += qty; else items.push({ slug, name, image, qty });
+    writeCart(items);
+    updateCartCount(true);
+    input.value = "";
+    showToast(`Added ${qty} × ${name}`);
+  });
+});
+
+// Cart page
+const cartList = document.getElementById("cart-list");
+if (cartList) {
+  const layout = document.getElementById("cart-layout");
+  const empty = document.getElementById("cart-empty");
+  const done = document.getElementById("order-done");
+
+  const renderCart = () => {
+    const items = readCart();
+    cartList.textContent = "";
+    items.forEach((it, index) => {
+      const li = document.createElement("li");
+      li.className = "cart-item";
+
+      const img = document.createElement("img");
+      img.src = typeof it.image === "string" && it.image.startsWith("images/") ? it.image : "favicon.svg";
+      img.alt = "";
+
+      const info = document.createElement("div");
+      const h3 = document.createElement("h3");
+      h3.textContent = it.name;
+      const small = document.createElement("small");
+      small.textContent = "Price confirmed on WhatsApp";
+      info.append(h3, small);
+
+      const qty = document.createElement("input");
+      qty.type = "number"; qty.min = "1"; qty.className = "qty-input";
+      qty.value = it.qty;
+      qty.setAttribute("aria-label", `Quantity for ${it.name}`);
+      qty.addEventListener("change", () => {
+        const n = parseQty(qty);
+        const current = readCart();
+        if (!current[index]) return;
+        if (n) { current[index].qty = n; writeCart(current); qty.classList.remove("invalid"); }
+        else { qty.value = current[index].qty; }
+      });
+
+      const remove = document.createElement("button");
+      remove.type = "button"; remove.className = "remove-btn";
+      remove.setAttribute("aria-label", `Remove ${it.name}`);
+      remove.innerHTML = '<svg class="i"><use href="#i-trash"/></svg>';
+      remove.addEventListener("click", () => {
+        const current = readCart();
+        current.splice(index, 1);
+        writeCart(current);
+        renderCart();
+      });
+
+      li.append(img, info, qty, remove);
+      cartList.appendChild(li);
+    });
+    const hasItems = items.length > 0;
+    layout.hidden = !hasItems;
+    empty.hidden = hasItems || !done.hidden;
+  };
+  renderCart();
+
+  const form = document.getElementById("checkout-form");
+  const error = document.getElementById("checkout-error");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const items = readCart();
+    const data = new FormData(form);
+    const val = (k) => String(data.get(k) || "").trim();
+    const missing = [];
+    if (!val("name")) missing.push("name");
+    if (!val("phone")) missing.push("phone");
+    if (!val("city")) missing.push("city");
+    if (!val("payment")) missing.push("payment method");
+    if (!items.length) missing.push("at least one product");
+    if (missing.length) {
+      error.textContent = `Please add your ${missing.join(", ")}.`;
+      error.hidden = false;
+      return;
+    }
+    error.hidden = true;
+
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, "0");
+    const orderId = `PC-${String(now.getFullYear()).slice(2)}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${Math.floor(Math.random() * 90 + 10)}`;
+
+    const lines = [`*New order ${orderId}* (website)`, "", "*Items:*"];
+    items.forEach((it, i) => lines.push(`${i + 1}. ${it.name} × ${it.qty}`));
+    lines.push("");
+    [["Name", "name"], ["Phone", "phone"], ["City", "city"], ["Business", "business"], ["Address", "address"], ["Payment", "payment"], ["Notes", "notes"]]
+      .forEach(([label, key]) => { if (val(key)) lines.push(`*${label}:* ${val(key)}`); });
+    lines.push("", "Please confirm the price and payment details.");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+
+    document.getElementById("order-id").textContent = orderId;
+    document.getElementById("order-resend").href = url;
+    writeCart([]);
+    form.reset();
+    layout.hidden = true;
+    empty.hidden = true;
+    done.hidden = false;
+    done.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+updateCartCount();

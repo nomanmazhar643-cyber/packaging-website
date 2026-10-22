@@ -42,6 +42,8 @@
     <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
     <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
     <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
@@ -67,6 +69,7 @@
         <li><a href="products.html">Products</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cart"><a href="cart.html" aria-label="Cart"><svg class="i"><use href="#i-cart"/></svg>Cart <span class="cart-count" hidden>0</span></a></li>
         <li class="nav-cta"><a href="contact.html" class="btn btn-sm">Get a Quote</a></li>
       </ul>
     </div>
@@ -205,27 +208,27 @@
         <div class="grid grid-3">
           <div class="card product-card reveal">
             <div class="thumb"><img src="images/birthday%20surprise%20box/1.jpg" alt="Birthday surprise box" loading="lazy"></div>
-            <div class="body"><span class="tag">Boxes</span><h3>Birthday Surprise Box</h3><p>Colorful handcrafted gift box with printed details and decorative accents. Perfect for birthdays, anniversaries and surprise gifts.</p><a href="contact.html?product=birthday-surprise-box" class="btn btn-outline">Get Quote</a></div>
+            <div class="body"><span class="tag">Boxes</span><h3>Birthday Surprise Box</h3><p>Colorful handcrafted gift box with printed details and decorative accents. Perfect for birthdays, anniversaries and surprise gifts.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="birthday-surprise-box">Add to Cart</button></div><a href="contact.html?product=birthday-surprise-box" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
             <div class="thumb"><img src="images/Butterfly%20paper%20cups/1.jpg" alt="Butterfly paper cups" loading="lazy"></div>
-            <div class="body"><span class="tag">Paper Cups</span><h3>Butterfly Paper Cups</h3><p>Pastel paper cups printed with butterflies and shimmering foil accents. A favorite for birthdays, baby showers and parties.</p><a href="contact.html?product=butterfly-paper-cups" class="btn btn-outline">Get Quote</a></div>
+            <div class="body"><span class="tag">Paper Cups</span><h3>Butterfly Paper Cups</h3><p>Pastel paper cups printed with butterflies and shimmering foil accents. A favorite for birthdays, baby showers and parties.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="butterfly-paper-cups">Add to Cart</button></div><a href="contact.html?product=butterfly-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
             <div class="thumb"><img src="images/Black%20Printed%20Burger%20Sleeves/4.jpg" alt="Black printed burger sleeves" loading="lazy"></div>
-            <div class="body"><span class="tag">Sleeves</span><h3>Black Printed Burger Sleeves</h3><p>Matte black cardboard sleeves that wrap neatly around burgers. Keeps hands clean and gives every burger a bold, premium look.</p><a href="contact.html?product=black-burger-sleeves" class="btn btn-outline">Get Quote</a></div>
+            <div class="body"><span class="tag">Sleeves</span><h3>Black Printed Burger Sleeves</h3><p>Matte black cardboard sleeves that wrap neatly around burgers. Keeps hands clean and gives every burger a bold, premium look.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-burger-sleeves">Add to Cart</button></div><a href="contact.html?product=black-burger-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
             <div class="thumb"><img src="images/black%20rigid%20box/3.jpg" alt="Black rigid box" loading="lazy"></div>
-            <div class="body"><span class="tag">Boxes</span><h3>Black Rigid Box</h3><p>Matte black rigid box with a magnetic flip-top lid. Ideal for luxury gifts, cosmetics and premium retail products.</p><a href="contact.html?product=black-rigid-box" class="btn btn-outline">Get Quote</a></div>
+            <div class="body"><span class="tag">Boxes</span><h3>Black Rigid Box</h3><p>Matte black rigid box with a magnetic flip-top lid. Ideal for luxury gifts, cosmetics and premium retail products.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-rigid-box">Add to Cart</button></div><a href="contact.html?product=black-rigid-box" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
             <div class="thumb"><img src="images/Brown%20paper%20cups/4.jpg" alt="Brown paper cups" loading="lazy"></div>
-            <div class="body"><span class="tag">Paper Cups</span><h3>Brown Paper Cups</h3><p>Brown paper cups with matching black sip lids for hot coffee and tea. Supplied in bulk for cafés and offices.</p><a href="contact.html?product=brown-paper-cups" class="btn btn-outline">Get Quote</a></div>
+            <div class="body"><span class="tag">Paper Cups</span><h3>Brown Paper Cups</h3><p>Brown paper cups with matching black sip lids for hot coffee and tea. Supplied in bulk for cafés and offices.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="brown-paper-cups">Add to Cart</button></div><a href="contact.html?product=brown-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
             <div class="thumb"><img src="images/branded%20coffee%20sleeves/Custom%20Branded%20Coffee%20Sleeves.jpg" alt="Branded coffee sleeve" loading="lazy"></div>
-            <div class="body"><span class="tag">Sleeves</span><h3>Branded Coffee Sleeves</h3><p>Coffee sleeves printed with your logo and brand colors. Made to fit small, medium and large cups.</p><a href="contact.html?product=branded-coffee-sleeves" class="btn btn-outline">Get Quote</a></div>
+            <div class="body"><span class="tag">Sleeves</span><h3>Branded Coffee Sleeves</h3><p>Coffee sleeves printed with your logo and brand colors. Made to fit small, medium and large cups.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="branded-coffee-sleeves">Add to Cart</button></div><a href="contact.html?product=branded-coffee-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
         </div>
         <div class="center-link reveal"><a href="products.html" class="btn">View All 22 Products</a></div>
