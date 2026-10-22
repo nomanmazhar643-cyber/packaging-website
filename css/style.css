@@ -63,13 +63,17 @@ a:hover { color: var(--brand-dark); }
 }
 .logo { font-weight: 800; font-size: 1.35rem; color: var(--ink); display: inline-flex; align-items: center; gap: 10px; }
 .logo:hover { color: var(--ink); }
-.logo span { color: var(--brand); }
-.logo .logo-mark {
-  width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--brand), #d98c4a); color: #fff; font-size: 1.15rem;
-  box-shadow: 0 4px 12px rgba(181,101,29,.35);
+.logo .logo-mark { width: 42px; height: 42px; flex-shrink: 0; filter: drop-shadow(0 4px 10px rgba(181,101,29,.35)); }
+.logo-text { display: flex; flex-direction: column; line-height: 1.05; }
+.logo-text b { font-weight: 800; font-size: 1.38rem; letter-spacing: -.01em; }
+.logo-text b span { color: var(--brand); }
+.logo-text small {
+  font-family: "Poppins", system-ui, sans-serif; font-size: .6rem; font-weight: 600;
+  letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-top: 4px;
 }
-.logo-light, .logo-light:hover { color: #fff; }
+.logo-light, .logo-light:hover, .site-footer .logo-light, .site-footer .logo-light:hover { color: #fff; }
+.logo-light .logo-text b span { color: #f0b27a; }
+.logo-light .logo-text small { color: #b9afa4; }
 .nav { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav a { color: var(--ink); font-weight: 500; position: relative; }
 .nav a:not(.btn)::after {
