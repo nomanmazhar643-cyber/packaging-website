@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nomanmazhar643-cyber.github.io/packaging-website/sitemap.xml
+Sitemap: https://packaging-website-lilac.vercel.app/sitemap.xml
