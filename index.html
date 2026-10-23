@@ -15,9 +15,7 @@
   <meta property="og:url" content="https://packaging-website-lilac.vercel.app/">
   <meta property="og:image" content="https://packaging-website-lilac.vercel.app/images/black%20rigid%20box/1.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="preload" href="fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -156,7 +154,7 @@
 
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="logo" aria-label="PackCraft home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
+      <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav">
         <li><a href="index.html">Home</a></li>
@@ -189,9 +187,9 @@
           </div>
           <div class="slide-art">
             <div class="collage">
-              <img class="c1" src="images/black%20rigid%20box/1.jpg" width="1200" height="1200" alt="Black rigid gift box" fetchpriority="high">
-              <img class="c2" src="images/birthday%20surprise%20box/3.jpg" width="1200" height="1200" alt="Printed birthday surprise box">
-              <img class="c3" src="images/branded%20coffee%20sleeves/Branded%20Coffee%20Sleeves.jpg" width="1000" height="1000" alt="Branded coffee sleeves">
+              <img class="c1" src="images/opt/black%20rigid%20box/1.webp" width="640" height="640" alt="Black rigid gift box" fetchpriority="high">
+              <img class="c2" src="images/opt/birthday%20surprise%20box/3.webp" width="640" height="640" alt="Printed birthday surprise box">
+              <img class="c3" src="images/opt/branded%20coffee%20sleeves/Branded%20Coffee%20Sleeves.webp" width="640" height="640" alt="Branded coffee sleeves">
             </div>
           </div>
         </div>
@@ -209,9 +207,9 @@
           </div>
           <div class="slide-art">
             <div class="collage">
-              <img class="c1" src="images/Brown%20paper%20cups/1.jpg" width="1000" height="1000" alt="Brown paper cups with lids">
-              <img class="c2" src="images/Cardboard%20cups%20with%20lids/1.png.jpg" width="1000" height="1000" alt="Kraft cup with lid">
-              <img class="c3" src="images/Christmas%20coffee%20cups/1.jpg" width="1000" height="1000" alt="Christmas coffee cups">
+              <img class="c1" src="images/opt/Brown%20paper%20cups/1.webp" width="640" height="640" alt="Brown paper cups with lids">
+              <img class="c2" src="images/opt/Cardboard%20cups%20with%20lids/1.webp" width="640" height="640" alt="Kraft cup with lid">
+              <img class="c3" src="images/opt/Christmas%20coffee%20cups/1.webp" width="640" height="640" alt="Christmas coffee cups">
             </div>
           </div>
         </div>
@@ -229,9 +227,9 @@
           </div>
           <div class="slide-art">
             <div class="collage">
-              <img class="c1" src="images/Cardboard%20Burger%20Sleeves/1.jpg" width="1080" height="1080" alt="Printed burger sleeves">
-              <img class="c2" src="images/black%20food%20boxes/3.jpg" width="1200" height="1200" alt="Black takeaway food box">
-              <img class="c3" src="images/blank%20pizza%20boxes/1.jpg" width="1000" height="1000" alt="Pizza box">
+              <img class="c1" src="images/opt/Cardboard%20Burger%20Sleeves/1.webp" width="640" height="640" alt="Printed burger sleeves">
+              <img class="c2" src="images/opt/black%20food%20boxes/3.webp" width="640" height="640" alt="Black takeaway food box">
+              <img class="c3" src="images/opt/blank%20pizza%20boxes/1.webp" width="640" height="640" alt="Pizza box">
             </div>
           </div>
         </div>
@@ -258,19 +256,19 @@
         </div>
         <div class="categories">
           <a class="category reveal" href="products.html?cat=boxes">
-            <img src="images/black%20food%20boxes/2.jpg" width="1200" height="1200" alt="Black takeaway food box with rice" loading="lazy">
+            <img src="images/opt/black%20food%20boxes/2.webp" width="640" height="640" alt="Black takeaway food box with rice" loading="lazy">
             <span class="category-label"><strong>Boxes</strong><small>5 products &rarr;</small></span>
           </a>
           <a class="category reveal" href="products.html?cat=cups">
-            <img src="images/Butterfly%20paper%20cups/4.jpg" width="1000" height="1000" alt="Stacks of printed butterfly paper cups" loading="lazy">
+            <img src="images/opt/Butterfly%20paper%20cups/4.webp" width="640" height="640" alt="Stacks of printed butterfly paper cups" loading="lazy">
             <span class="category-label"><strong>Paper Cups</strong><small>7 products &rarr;</small></span>
           </a>
           <a class="category reveal" href="products.html?cat=sleeves">
-            <img src="images/branded%20coffee%20sleeves/Branded%20Coffee%20Sleeves%20Packaging.jpg" width="1000" height="1000" alt="Coffee cups with kraft sleeves" loading="lazy">
+            <img src="images/opt/branded%20coffee%20sleeves/Branded%20Coffee%20Sleeves%20Packaging.webp" width="640" height="640" alt="Coffee cups with kraft sleeves" loading="lazy">
             <span class="category-label"><strong>Sleeves</strong><small>8 products &rarr;</small></span>
           </a>
           <a class="category reveal" href="products.html?cat=paper">
-            <img src="images/Blank%20Presentation%20Folders/3.jpg" width="1000" height="1000" alt="Teal presentation folders" loading="lazy">
+            <img src="images/opt/Blank%20Presentation%20Folders/3.webp" width="640" height="640" alt="Teal presentation folders" loading="lazy">
             <span class="category-label"><strong>Paper &amp; Folders</strong><small>2 products &rarr;</small></span>
           </a>
         </div>
@@ -318,27 +316,27 @@
         </div>
         <div class="grid grid-3">
           <div class="card product-card reveal">
-            <div class="thumb"><img src="images/birthday%20surprise%20box/1.jpg" width="1200" height="1200" alt="Birthday surprise box" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/birthday%20surprise%20box/1.webp" width="640" height="640" alt="Birthday surprise box" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Birthday Surprise Box</h3><p>Colorful handcrafted gift box with printed details and decorative accents. Perfect for birthdays, anniversaries and surprise gifts.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="birthday-surprise-box">Add to Cart</button></div><a href="contact.html?product=birthday-surprise-box" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
-            <div class="thumb"><img src="images/Butterfly%20paper%20cups/1.jpg" width="1000" height="1000" alt="Butterfly paper cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Butterfly%20paper%20cups/1.webp" width="640" height="640" alt="Butterfly paper cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Butterfly Paper Cups</h3><p>Pastel paper cups printed with butterflies and shimmering foil accents. A favorite for birthdays, baby showers and parties.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="butterfly-paper-cups">Add to Cart</button></div><a href="contact.html?product=butterfly-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
-            <div class="thumb"><img src="images/Black%20Printed%20Burger%20Sleeves/4.jpg" width="1000" height="1000" alt="Black printed burger sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Black%20Printed%20Burger%20Sleeves/4.webp" width="640" height="640" alt="Black printed burger sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Black Printed Burger Sleeves</h3><p>Matte black cardboard sleeves that wrap neatly around burgers. Keeps hands clean and gives every burger a bold, premium look.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-burger-sleeves">Add to Cart</button></div><a href="contact.html?product=black-burger-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
-            <div class="thumb"><img src="images/black%20rigid%20box/3.jpg" width="1200" height="1200" alt="Black rigid box" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/black%20rigid%20box/3.webp" width="640" height="640" alt="Black rigid box" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Black Rigid Box</h3><p>Matte black rigid box with a magnetic flip-top lid. Ideal for luxury gifts, cosmetics and premium retail products.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-rigid-box">Add to Cart</button></div><a href="contact.html?product=black-rigid-box" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
-            <div class="thumb"><img src="images/Brown%20paper%20cups/4.jpg" width="1000" height="1000" alt="Brown paper cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Brown%20paper%20cups/4.webp" width="640" height="640" alt="Brown paper cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Brown Paper Cups</h3><p>Brown paper cups with matching black sip lids for hot coffee and tea. Supplied in bulk for cafés and offices.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="brown-paper-cups">Add to Cart</button></div><a href="contact.html?product=brown-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card reveal">
-            <div class="thumb"><img src="images/branded%20coffee%20sleeves/Custom%20Branded%20Coffee%20Sleeves.jpg" width="1000" height="1000" alt="Branded coffee sleeve" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/branded%20coffee%20sleeves/Custom%20Branded%20Coffee%20Sleeves.webp" width="640" height="640" alt="Branded coffee sleeve" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Branded Coffee Sleeves</h3><p>Coffee sleeves printed with your logo and brand colors. Made to fit small, medium and large cups.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="branded-coffee-sleeves">Add to Cart</button></div><a href="contact.html?product=branded-coffee-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
         </div>
@@ -456,20 +454,20 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo logo-light" aria-label="PackCraft home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
+          <a href="index.html" class="logo logo-light"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
           <p>Custom boxes, paper cups, sleeves and food packaging, plain or printed with your brand.</p>
           <a href="https://wa.me/923017090822" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"><svg class="i"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
         </div>
         <div>
-          <h4>Company</h4>
+          <h3>Company</h3>
           <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="sitemap.html">Sitemap</a></li></ul>
         </div>
         <div>
-          <h4>Products</h4>
+          <h3>Products</h3>
           <ul><li><a href="products.html?cat=boxes">Boxes</a></li><li><a href="products.html?cat=cups">Paper Cups</a></li><li><a href="products.html?cat=sleeves">Sleeves</a></li><li><a href="products.html?cat=paper">Paper &amp; Folders</a></li></ul>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h3>Contact</h3>
           <ul class="footer-contact">
             <li><svg class="i"><use href="#i-phone"/></svg><a href="tel:+923017090822">+92 301 7090822</a></li>
             <li><svg class="i"><use href="#i-mail"/></svg><a href="mailto:nomanmazhar643@gmail.com">nomanmazhar643@gmail.com</a></li>

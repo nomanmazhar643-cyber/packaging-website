@@ -15,9 +15,7 @@
   <meta property="og:url" content="https://packaging-website-lilac.vercel.app/products.html">
   <meta property="og:image" content="https://packaging-website-lilac.vercel.app/images/black%20rigid%20box/1.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="preload" href="fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
 {
@@ -75,7 +73,7 @@
 
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="logo" aria-label="PackCraft home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
+      <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav">
         <li><a href="index.html">Home</a></li>
@@ -113,91 +111,91 @@
 
         <div class="grid grid-3" id="product-grid">
           <div class="card product-card" data-category="boxes">
-            <div class="thumb"><img src="images/black%20rigid%20box/1.jpg" width="1200" height="1200" alt="Black rigid box" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/black%20rigid%20box/1.webp" width="640" height="640" alt="Black rigid box" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Black Rigid Box</h3><p>Matte black rigid box with a magnetic flip-top lid. Ideal for luxury gifts, cosmetics and premium retail products.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-rigid-box">Add to Cart</button></div><a href="contact.html?product=black-rigid-box" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="boxes">
-            <div class="thumb"><img src="images/birthday%20surprise%20box/1.jpg" width="1200" height="1200" alt="Birthday surprise box" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/birthday%20surprise%20box/1.webp" width="640" height="640" alt="Birthday surprise box" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Birthday Surprise Box</h3><p>Colorful handcrafted gift box with printed details and decorative accents. Perfect for birthdays, anniversaries and surprise gifts.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="birthday-surprise-box">Add to Cart</button></div><a href="contact.html?product=birthday-surprise-box" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="boxes">
-            <div class="thumb"><img src="images/black%20food%20boxes/1.jpg" width="1200" height="1200" alt="Black food boxes" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/black%20food%20boxes/1.webp" width="640" height="640" alt="Black food boxes" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Black Food Boxes</h3><p>Fold-top takeaway boxes with a black exterior and white food-safe interior. Great for salads, noodles and rice dishes.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-food-boxes">Add to Cart</button></div><a href="contact.html?product=black-food-boxes" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="boxes">
-            <div class="thumb"><img src="images/blank%20pizza%20boxes/1.jpg" width="1000" height="1000" alt="Blank pizza boxes" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/blank%20pizza%20boxes/1.webp" width="640" height="640" alt="Blank pizza boxes" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Blank Pizza Boxes</h3><p>Corrugated pizza boxes with a black exterior and natural kraft interior. Strong, stackable and keeps pizza hot.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="blank-pizza-boxes">Add to Cart</button></div><a href="contact.html?product=blank-pizza-boxes" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="boxes">
-            <div class="thumb"><img src="images/blue%20food%20packaging/4.jpg" width="1200" height="1200" alt="Blue food packaging box" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/blue%20food%20packaging/4.webp" width="640" height="640" alt="Blue food packaging box" loading="lazy"></div>
             <div class="body"><span class="tag">Boxes</span><h3>Blue Food Packaging</h3><p>Bright blue tuck-top boxes with a clean grey interior. Great for food delivery, meal kits and bakery orders.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="blue-food-packaging">Add to Cart</button></div><a href="contact.html?product=blue-food-packaging" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Brown%20paper%20cups/1.jpg" width="1000" height="1000" alt="Brown paper cups with lids" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Brown%20paper%20cups/1.webp" width="640" height="640" alt="Brown paper cups with lids" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Brown Paper Cups</h3><p>Brown paper cups with matching black sip lids for hot coffee and tea. Supplied in bulk for cafés and offices.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="brown-paper-cups">Add to Cart</button></div><a href="contact.html?product=brown-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Butterfly%20paper%20cups/1.jpg" width="1000" height="1000" alt="Butterfly paper cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Butterfly%20paper%20cups/1.webp" width="640" height="640" alt="Butterfly paper cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Butterfly Paper Cups</h3><p>Pastel paper cups printed with butterflies and shimmering foil accents. A favorite for birthdays, baby showers and parties.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="butterfly-paper-cups">Add to Cart</button></div><a href="contact.html?product=butterfly-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Bowl%20paper%20cups/1.jpg" width="1000" height="1000" alt="Bowl paper cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Bowl%20paper%20cups/1.webp" width="640" height="640" alt="Bowl paper cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Bowl Paper Cups</h3><p>Polka-dot paper bowls for ice cream, frozen yogurt and snacks. Sturdy, food-safe and easy to stack.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="bowl-paper-cups">Add to Cart</button></div><a href="contact.html?product=bowl-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Cardboard%20coffee%20cups/1.jpg" width="1000" height="1000" alt="Cardboard coffee cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Cardboard%20coffee%20cups/1.webp" width="640" height="640" alt="Cardboard coffee cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Cardboard Coffee Cups</h3><p>Clean, minimalist cardboard cups with black lids for hot drinks. Ready for your logo or used plain.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="cardboard-coffee-cups">Add to Cart</button></div><a href="contact.html?product=cardboard-coffee-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Cardboard%20cups%20with%20lids/1.png.jpg" width="1000" height="1000" alt="Cardboard cups with lids" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Cardboard%20cups%20with%20lids/1.webp" width="640" height="640" alt="Cardboard cups with lids" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Cardboard Cups with Lids</h3><p>Kraft paper cups with snug-fit black lids, ideal for espresso and takeaway coffee. Printable with your own design.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="cardboard-cups-with-lids">Add to Cart</button></div><a href="contact.html?product=cardboard-cups-with-lids" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Christmas%20coffee%20cups/1.jpg" width="1000" height="1000" alt="Christmas coffee cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Christmas%20coffee%20cups/1.webp" width="640" height="640" alt="Christmas coffee cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Christmas Coffee Cups</h3><p>Festive red, green and white cups with lids for holiday coffee menus. Brings seasonal cheer to every order.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="christmas-coffee-cups">Add to Cart</button></div><a href="contact.html?product=christmas-coffee-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="cups">
-            <div class="thumb"><img src="images/Christmas%20paper%20cups/1.jpg" width="1000" height="1000" alt="Christmas paper cups" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Christmas%20paper%20cups/1.webp" width="640" height="640" alt="Christmas paper cups" loading="lazy"></div>
             <div class="body"><span class="tag">Paper Cups</span><h3>Christmas Paper Cups</h3><p>White paper cups printed with Christmas trees and gold foil accents. Perfect for holiday parties and events.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="christmas-paper-cups">Add to Cart</button></div><a href="contact.html?product=christmas-paper-cups" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/black%20coffee%20sleeves/Black%20Coffee%20Sleeve%20on%20Cup.jpg" width="1000" height="1000" alt="Black coffee sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/black%20coffee%20sleeves/Black%20Coffee%20Sleeve%20on%20Cup.webp" width="640" height="640" alt="Black coffee sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Black Coffee Sleeves</h3><p>Stylish black cup sleeves that protect hands from hot drinks. A bold, modern look for any café.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-coffee-sleeves">Add to Cart</button></div><a href="contact.html?product=black-coffee-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/blank%20coffee%20sleeves/Blank%20coffee%20sleeves%20wholesale.jpg" width="1000" height="1000" alt="Blank coffee sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/blank%20coffee%20sleeves/Blank%20coffee%20sleeves%20wholesale.webp" width="640" height="640" alt="Blank coffee sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Blank Coffee Sleeves</h3><p>Plain kraft sleeves that fit standard coffee cups. Use them as they are or add your own sticker or stamp.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="blank-coffee-sleeves">Add to Cart</button></div><a href="contact.html?product=blank-coffee-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/branded%20coffee%20sleeves/Branded%20Coffee%20Sleeves.jpg" width="1000" height="1000" alt="Branded coffee sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/branded%20coffee%20sleeves/Branded%20Coffee%20Sleeves.webp" width="640" height="640" alt="Branded coffee sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Branded Coffee Sleeves</h3><p>Coffee sleeves printed with your logo and brand colors. Made to fit small, medium and large cups.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="branded-coffee-sleeves">Add to Cart</button></div><a href="contact.html?product=branded-coffee-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/branded%20cup%20sleeves/Custom%20Branded%20Cup%20Sleeves.jpg" width="1000" height="1000" alt="Branded cup sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/branded%20cup%20sleeves/Custom%20Branded%20Cup%20Sleeves.webp" width="640" height="640" alt="Branded cup sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Branded Cup Sleeves</h3><p>Ribbed, heat-insulating cup sleeves printed with your logo. Turns every cup into a walking advertisement.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="branded-cup-sleeves">Add to Cart</button></div><a href="contact.html?product=branded-cup-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/cardboard%20coffee%20sleeves/Custom%20coffee%20sleeves.jpg" width="1000" height="1000" alt="Cardboard coffee sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/cardboard%20coffee%20sleeves/Custom%20coffee%20sleeves.webp" width="640" height="640" alt="Cardboard coffee sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Cardboard Coffee Sleeves</h3><p>Ribbed kraft cardboard sleeves with excellent heat insulation. Eco-friendly and recyclable.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="cardboard-coffee-sleeves">Add to Cart</button></div><a href="contact.html?product=cardboard-coffee-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/Black%20Printed%20Burger%20Sleeves/4.jpg" width="1000" height="1000" alt="Black printed burger sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Black%20Printed%20Burger%20Sleeves/4.webp" width="640" height="640" alt="Black printed burger sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Black Printed Burger Sleeves</h3><p>Matte black cardboard sleeves that wrap neatly around burgers. Keeps hands clean and gives every burger a bold, premium look.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="black-burger-sleeves">Add to Cart</button></div><a href="contact.html?product=black-burger-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/Cardboard%20Burger%20Sleeves/1.jpg" width="1080" height="1080" alt="Cardboard burger sleeves" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Cardboard%20Burger%20Sleeves/1.webp" width="640" height="640" alt="Cardboard burger sleeves" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Cardboard Burger Sleeves</h3><p>Printed cardboard sleeves that hold burgers neatly and show off your brand. Easy to fold and quick to serve.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="cardboard-burger-sleeves">Add to Cart</button></div><a href="contact.html?product=cardboard-burger-sleeves" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="sleeves">
-            <div class="thumb"><img src="images/chocolate%20bar%20sleeve%20packaging/Custom%20Chocolate%20Bar%20Sleeve.jpg" width="1000" height="1000" alt="Chocolate bar sleeve" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/chocolate%20bar%20sleeve%20packaging/Custom%20Chocolate%20Bar%20Sleeve.webp" width="640" height="640" alt="Chocolate bar sleeve" loading="lazy"></div>
             <div class="body"><span class="tag">Sleeves</span><h3>Chocolate Bar Sleeve</h3><p>Printed paper bands that wrap around chocolate bars. Bold colors and your branding make every bar stand out.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="chocolate-bar-sleeve">Add to Cart</button></div><a href="contact.html?product=chocolate-bar-sleeve" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="paper">
-            <div class="thumb"><img src="images/Cheese%20Paper/Custom%20Cheese%20Paper.jpg" width="1200" height="1200" alt="Cheese wrapped in white cheese paper" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Cheese%20Paper/Custom%20Cheese%20Paper.webp" width="640" height="640" alt="Cheese wrapped in white cheese paper" loading="lazy"></div>
             <div class="body"><span class="tag">Paper &amp; Folders</span><h3>Cheese Paper</h3><p>Breathable, food-safe wrapping paper that keeps cheese fresh for longer. Available plain or printed with your logo.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="cheese-paper">Add to Cart</button></div><a href="contact.html?product=cheese-paper" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
           <div class="card product-card" data-category="paper">
-            <div class="thumb"><img src="images/Blank%20Presentation%20Folders/1.jpg" width="1000" height="1000" alt="Blank presentation folders" loading="lazy"></div>
+            <div class="thumb"><img src="images/opt/Blank%20Presentation%20Folders/1.webp" width="640" height="640" alt="Blank presentation folders" loading="lazy"></div>
             <div class="body"><span class="tag">Paper &amp; Folders</span><h3>Blank Presentation Folders</h3><p>Kraft presentation folders with an inside pocket and business-card slot. Ideal for proposals, brochures and documents.</p><div class="buy-row"><input type="number" class="qty-input" min="1" inputmode="numeric" placeholder="Qty" aria-label="Quantity"><button type="button" class="btn add-to-cart" data-slug="presentation-folders">Add to Cart</button></div><a href="contact.html?product=presentation-folders" class="quote-link">Need a custom size? Get a quote &rarr;</a></div>
           </div>
         </div>
@@ -221,20 +219,20 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo logo-light" aria-label="PackCraft home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
+          <a href="index.html" class="logo logo-light"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="logo-text"><b>Pack<span>Craft</span></b><small>Custom Packaging</small></span></a>
           <p>Custom boxes, paper cups, sleeves and food packaging, plain or printed with your brand.</p>
           <a href="https://wa.me/923017090822" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"><svg class="i"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
         </div>
         <div>
-          <h4>Company</h4>
+          <h3>Company</h3>
           <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="sitemap.html">Sitemap</a></li></ul>
         </div>
         <div>
-          <h4>Products</h4>
+          <h3>Products</h3>
           <ul><li><a href="products.html?cat=boxes">Boxes</a></li><li><a href="products.html?cat=cups">Paper Cups</a></li><li><a href="products.html?cat=sleeves">Sleeves</a></li><li><a href="products.html?cat=paper">Paper &amp; Folders</a></li></ul>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h3>Contact</h3>
           <ul class="footer-contact">
             <li><svg class="i"><use href="#i-phone"/></svg><a href="tel:+923017090822">+92 301 7090822</a></li>
             <li><svg class="i"><use href="#i-mail"/></svg><a href="mailto:nomanmazhar643@gmail.com">nomanmazhar643@gmail.com</a></li>

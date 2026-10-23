@@ -1,6 +1,13 @@
+/* Poppins, self-hosted (SIL Open Font License) */
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/poppins-500-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/poppins-600-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/poppins-700-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 800; font-display: swap; src: url("../fonts/poppins-800-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 :root {
-  --brand: #b5651d;
+  --brand: #a85d17;
   --brand-dark: #8a4a12;
+  --brand-text: #8a4a12;
   --ink: #1f1a16;
   --muted: #6b625a;
   --bg: #faf7f2;
@@ -23,7 +30,7 @@ body {
 h1, h2, h3, h4, .logo, .btn, .badge, .eyebrow { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 
 img { max-width: 100%; height: auto; display: block; }
-a { color: var(--brand); text-decoration: none; }
+a { color: var(--brand-text); text-decoration: none; }
 a:hover { color: var(--brand-dark); }
 
 .container { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
@@ -79,7 +86,7 @@ a:hover { color: var(--brand-dark); }
   background: var(--brand); transform: scaleX(0); transition: transform .25s;
 }
 .nav a:not(.btn):hover::after, .nav a.active:not(.btn)::after { transform: scaleX(1); }
-.nav a.active, .nav a:hover { color: var(--brand); }
+.nav a.active, .nav a:hover { color: var(--brand-text); }
 .nav .btn, .nav .btn.active, .nav .btn:hover { color: #fff; }
 .btn-sm { padding: 9px 18px; font-size: .92rem; }
 .nav-toggle {
@@ -217,7 +224,7 @@ a:hover { color: var(--brand-dark); }
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 36px; }
 .section-head .section-sub { margin-bottom: 0; }
 .eyebrow {
-  display: inline-block; color: var(--brand); font-weight: 600; font-size: .85rem;
+  display: inline-block; color: var(--brand-text); font-weight: 600; font-size: .85rem;
   letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px;
 }
 .center-link { text-align: center; margin-top: 36px; }
@@ -499,6 +506,8 @@ a.contact-card:hover { color: var(--ink); transform: translateY(-3px); box-shado
 /* Banner text rises in, one line after another, each time a slide becomes active */
 .slide.active .slide-text > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
 .slide.active .slide-text > :nth-child(2) { animation-delay: .1s; }
+/* The first heading is the LCP element: show it immediately */
+.slide.active .slide-text > h1 { animation: none; }
 .slide.active .slide-text > :nth-child(3) { animation-delay: .2s; }
 .slide.active .slide-text > :nth-child(4) { animation-delay: .3s; }
 .slide.active .slide-text > :nth-child(5) { animation-delay: .4s; }
@@ -607,7 +616,7 @@ section { padding: 64px 0; }
 .product-card .body p { flex: 1; margin-bottom: 16px; }
 .tag {
   display: inline-block; font-size: .75rem; font-weight: 600; text-transform: uppercase;
-  color: var(--brand); margin-bottom: 6px; letter-spacing: .04em;
+  color: var(--brand-text); margin-bottom: 6px; letter-spacing: .04em;
 }
 
 /* Filters */
@@ -669,7 +678,7 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand); bor
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-brand p { margin: 16px 0 20px; max-width: 300px; }
-.site-footer h4 { color: #fff; margin-bottom: 16px; font-size: 1rem; }
+.site-footer h3 { color: #fff; margin-bottom: 16px; font-size: 1rem; }
 .site-footer ul { list-style: none; display: grid; gap: 10px; }
 .site-footer a { color: #b9afa4; transition: color .2s; }
 .site-footer a:hover { color: #f0b27a; }
